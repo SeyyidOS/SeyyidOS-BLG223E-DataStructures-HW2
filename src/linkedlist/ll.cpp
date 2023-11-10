@@ -293,17 +293,23 @@ int main(int argc, char *argv[])
         cerr << "Usage: " << argv[0] << " <data file> <operations file>" << endl;
         return 1;
     }
-    // Create a linked list and push the employees to the list
+
+    // double exec_time;
+    // clock_t start, end;
+
+    // start = clock ();
+
     LinkedList list;
 
-    // Load the employees from the data file
     loadFromCSV(argv[1], list);
 
-    // Process the operations
     processOperations(argv[2], list);
 
-    // Save the employees to the data file
     list.saveToCSV("linked_list_solution.csv");
+
+    // end = clock ();
+    // exec_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+    // cout << "Execution time in sec: " << exec_time << endl;
 
     return 0;
 }
